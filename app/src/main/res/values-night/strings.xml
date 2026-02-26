@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Taller</string>
+    <string name="mensaje_bienvenida">ParkNow</string>
+    <string name="mensaje_inicio">La aventura está por iniciar ,\n por favor inicia sesión</string>
+    <string name="correo">Correo</string>
+    <string name="password">Contraseña</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="tv_descripcion_bienvenida">Inicia una nueva aventura con ParkNow y descubre una nueva forma de ver el mundo</string>
+    <string name="comienza">Comienza</string>
+    <string name="ingresa_con_google">Ingresa con Google</string>
+    <string name="registrate">No tienes cuenta? Regístrate</string>
+    <string name="nombre_estudiante">Jhon Jairo Martinez</string>
+    <string name="registarte">Registrate</string>
+    <string name="recupera_tu_contrase">Recupera Tu Contraseña</string>
+    <string name="ingresar_con_google">ingresar_con_google</string>
+    <string name="tipo_letra_botones">tiro_devanagari_hindi</string>
+    <string name="no_tienes_cuenta">No tienes cuenta? Regístrate</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="Azul_oscuro">#223962</color>
+    <color name="Blanco">#FFFFFFFF</color>
+    <color name="Negro">#000000</color>
+    <color name="Azul_claro">#27B0DC</color>
+    <color name="background_primary">#27B0DC</color>
+    <color name="border">#1A1515</color>
+</resources>
