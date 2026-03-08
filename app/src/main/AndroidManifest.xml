@@ -12,16 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Taller">
         <activity
-            android:name=".activities.InformacionActivity"
+            android:name=".ui.auth.RegistroActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.InicioActivity"
+            android:name=".ui.auth.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.inicio.InformacionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.inicio.InicioActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.SplahsActivity"
+            android:name=".ui.inicio.SplahsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
