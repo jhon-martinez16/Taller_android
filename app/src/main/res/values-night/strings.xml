@@ -24,4 +24,19 @@
     <string name="registrarse">Registrarse</string>
     <string name="ya_tienes_cuenta">¿Ya tienes cuenta? Inicia sesión</string>
     <string name="re_contrase_a">Re-Contraseña</string>
+    <string name="mi_tienda_main">Mi Tienda</string>
+    <string name="nombre_catalogo">Catálogo</string>
+    <string name="bienvenido_a_la_tienda">Bienvenido a la tienda</string>
+    <string name="explora_nuestros_productos">Explora nuestros productos</string>
+    <string name="promociones">Promociones</string>
+    <string name="producto_3">Producto 3</string>
+    <string name="producto_2">Producto 2</string>
+    <string name="producto_1">Producto 1</string>
+    <string name="cat_logo">Catálogo</string>
+    <string name="gesti_n_de_usuarios">Gestión de usuarios</string>
+    <string name="gesti_n_de_productos">Gestión de productos</string>
+    <string name="panel_admin">Panel Admin</string>
+    <string name="tu_carrito_est_vac_o">Tu carrito está vacío</string>
+    <string name="perfil">Perfil</string>
+    <string name="jhon_martinez_gmail_com">jhon.martinez@gmail.com</string>
 </resources>
