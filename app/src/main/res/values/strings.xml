@@ -38,4 +38,6 @@
     <string name="tu_carrito_est_vac_o">Tu carrito está vacío</string>
     <string name="perfil">Perfil</string>
     <string name="jhon_martinez_gmail_com">jhon.martinez@gmail.com</string>
+    <string name="agregar_producto">Agregar</string>
+    <string name="productos_destacados">Productos Destacados!!</string>
 </resources>
