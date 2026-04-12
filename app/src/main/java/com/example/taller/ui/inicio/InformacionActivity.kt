@@ -7,6 +7,7 @@ import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.example.taller.R
 import com.example.taller.ui.auth.LoginActivity
+import com.example.taller.ui.auth.RegistroActivity
 
 class InformacionActivity : AppCompatActivity() {
 
@@ -15,7 +16,7 @@ class InformacionActivity : AppCompatActivity() {
         setContentView(R.layout.activity_informacion)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, LoginActivity::class.java))
+            startActivity(Intent(this, RegistroActivity::class.java))
             finish()
         }, 3000)
     }
