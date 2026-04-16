@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_inicio"
+        android:title="@string/inicio_drawer"
+        android:icon="@android:drawable/ic_menu_view"/>
+
+    <item
+        android:id="@+id/nav_productos"
+        android:title="@string/productos_drawer"
+        android:icon="@android:drawable/ic_menu_agenda"/>
+
+    <item
+        android:id="@+id/nav_perfil"
+        android:title="@string/perfil_drawer"
+        android:icon="@android:drawable/ic_menu_myplaces"/>
+
+    <item
+        android:id="@+id/nav_admin"
+        android:title="@string/admin_drawer"
+        android:icon="@android:drawable/ic_menu_manage"/>
+
+    <item
+        android:id="@+id/nav_logout"
+        android:title="@string/cerrar_sesion_drawer"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"/>
+
+</menu>
