@@ -11,7 +11,7 @@
     <string name="registrate">No tienes cuenta? Regístrate</string>
     <string name="nombre_estudiante">Jhon Jairo Martinez</string>
     <string name="registarte">Registrate</string>
-    <string name="recupera_tu_contrase">Recupera Tu Contraseña</string>
+    <string name="recupera_tu_contrase">Recupera Tu Contrasena</string>
     <string name="ingresar_con_google">ingresar con google</string>
     <string name="tipo_letra_botones">tiro_devanagari_hindi</string>
     <string name="no_tienes_cuenta">No tienes cuenta? Regístrate</string>
@@ -40,4 +40,11 @@
     <string name="jhon_martinez_gmail_com">jhon.martinez@gmail.com</string>
     <string name="agregar_producto">Agregar</string>
     <string name="productos_destacados">Productos Destacados!!</string>
+    <string name="cerrar_sesion">cerrar_sesion</string>
+    <string name="cerrar_sesi_n">Cerrar sesión</string>
+    <string name="inicio_drawer">Inicio</string>
+    <string name="productos_drawer">Productos</string>
+    <string name="perfil_drawer">Perfil</string>
+    <string name="admin_drawer">Admin</string>
+    <string name="cerrar_sesion_drawer">Cerrar sesión</string>
 </resources>
