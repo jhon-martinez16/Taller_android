@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_editar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/Blanco">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/editar_perfil"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="@color/Azul_oscuro"
+        android:gravity="center"
+        android:padding="16dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="24dp">
+
+            <FrameLayout
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginBottom="24dp">
+
+                <ImageView
+                    android:id="@+id/iv_editar_foto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_launcher_round" />
+
+                <ImageView
+                    android:id="@+id/iv_camara_icon"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="bottom|end"
+                    android:src="@android:drawable/ic_menu_camera"
+                    android:padding="6dp"/>
+            </FrameLayout>
+
+            <EditText
+                android:id="@+id/et_editar_nombres"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/nombre"
+                android:paddingStart="15dp"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginBottom="12dp"
+                android:inputType="textPersonName"/>
+
+            <EditText
+                android:id="@+id/et_editar_apellidos"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/apellido"
+                android:paddingStart="15dp"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginBottom="12dp"
+                android:inputType="textPersonName"/>
+
+            <EditText
+                android:id="@+id/et_editar_correo"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/correos"
+                android:paddingStart="15dp"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginBottom="12dp"
+                android:inputType="textEmailAddress"/>
+
+            <EditText
+                android:id="@+id/et_editar_contrasena"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/nueva_contrase_a"
+                android:paddingStart="15dp"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginBottom="12dp"
+                android:inputType="textPassword"/>
+
+            <EditText
+                android:id="@+id/et_editar_recontrasena"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/confirmar_contrase_a"
+                android:paddingStart="15dp"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginBottom="24dp"
+                android:inputType="textPassword"/>
+
+            <Button
+                android:id="@+id/btn_guardar_perfil"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/guardar_cambios"
+                android:textColor="@color/Blanco"
+                android:backgroundTint="@color/Azul_oscuro" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -3,7 +3,7 @@ package com.example.taller.ui
 import io.github.jan.supabase.auth.Auth
 import io.github.jan.supabase.createSupabaseClient
 import io.github.jan.supabase.postgrest.Postgrest
-import io.github.jan.supabase.postgrest.postgrest
+import io.github.jan.supabase.storage.Storage
 
 
 object SupabaseClient {
@@ -13,5 +13,7 @@ object SupabaseClient {
     ){
         install(plugin = Auth)
         install(plugin = Postgrest)
+        install(Storage)
+
     }
 }

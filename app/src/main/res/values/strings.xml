@@ -47,4 +47,19 @@
     <string name="perfil_drawer">Perfil</string>
     <string name="admin_drawer">Admin</string>
     <string name="cerrar_sesion_drawer">Cerrar sesión</string>
+    <string name="home">Home</string>
+    <string name="catalogo">Catalogo</string>
+    <string name="carrito">Carrito</string>
+    <string name="admin">Admin</string>
+    <string name="ingresar_con_huella">Ingresar con huella</string>
+    <string name="foto_de_perfil">foto_de_perfil</string>
+    <string name="editar_perfil">Editar Perfil</string>
+    <string name="nombre">Nombres</string>
+    <string name="apellido">Apellidos</string>
+    <string name="correos">Correo</string>
+    <string name="nueva_contrase_a">Nueva contraseña</string>
+    <string name="confirmar_contrase_a">Confirmar contraseña</string>
+    <string name="guardar_cambios">Guardar cambios</string>
+    <string name="rol">Rol</string>
+    <string name="correo_email_com">correo@email.com</string>
 </resources>

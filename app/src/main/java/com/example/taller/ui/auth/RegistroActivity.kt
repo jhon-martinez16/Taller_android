@@ -6,11 +6,14 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.taller.R
+import com.example.taller.data.UsuarioRepository
 
 import io.github.jan.supabase.auth.auth
 import io.github.jan.supabase.postgrest.from
 import kotlinx.coroutines.launch
 import com.example.taller.ui.SupabaseClient
+import kotlinx.serialization.json.buildJsonObject
+import kotlinx.serialization.json.put
 
 class RegistroActivity : AppCompatActivity() {
 
@@ -96,20 +99,25 @@ class RegistroActivity : AppCompatActivity() {
                 client.auth.signUpWith(io.github.jan.supabase.auth.providers.builtin.Email) {
                     email = correo
                     this.password = password
+                    data = buildJsonObject {
+                        put("nombres", nombres)
+                        put("apellidos", apellidos)
+                    }
                 }
 
                 // 2. ID USUARIO
-                val userId = client.auth.currentUserOrNull()?.id ?: ""
+                val userId = SupabaseClient.client.auth.currentUserOrNull()?.id?:""
+                UsuarioRepository.insertarUsuario(userId,nombres,apellidos,correo)
 
                 // 3. INSERTAR
-                client.from("usuarios").insert(
-                    mapOf(
-                        "id" to userId,
-                        "nombres" to nombres,
-                        "apellidos" to apellidos,
-                        "correo" to correo
-                    )
-                )
+                //client.from("usuarios").insert(
+                 //   mapOf(
+                  //      "id" to userId,
+                  //      "nombres" to nombres,
+                  //      "apellidos" to apellidos,
+                  //      "correo" to correo
+                  //  )
+               // )
 
                 // 4. RESPUESTA
                 runOnUiThread {

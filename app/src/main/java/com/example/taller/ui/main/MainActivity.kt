@@ -8,17 +8,22 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.lifecycleScope
 import com.example.taller.R
+import android.view.Menu
+import com.example.taller.data.UsuarioRepository
 import com.example.taller.ui.SupabaseClient
 import com.example.taller.ui.auth.LoginActivity
 import com.example.taller.ui.main.admin.AdminFragment
-import com.example.taller.ui.main.perfil.PerfilFragment
+import com.example.taller.ui.main.perfil.EditarPerfilFragment
 import com.example.taller.ui.main.productos.CarritoFragment
 import com.example.taller.ui.main.productos.CatalogoFragment
 import com.example.taller.ui.main.productos.HomeFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import io.github.jan.supabase.auth.auth
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import com.example.taller.ui.main.perfil.PerfilFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,18 +33,44 @@ class MainActivity : AppCompatActivity() {
 
         val drawer = findViewById<DrawerLayout>(R.id.drawerLayout)
         val btnMenu = findViewById<ImageButton>(R.id.btnMenu)
-        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigation)
-        val navigationView = findViewById<NavigationView>(R.id.navigationView) // 👈 ESTE ES EL TUYO
 
-        // 🔹 Abrir menú lateral
+        val navigationView = findViewById<NavigationView>(R.id.navigationView)
+
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigation)
+        //configurarBottomMenuPorRol(bottomNav)
+
+        lifecycleScope.launch {
+
+            val user = SupabaseClient.client.auth.currentUserOrNull()
+
+            if (user == null) {
+                cerrarSesion()
+                return@launch
+            }
+
+            val rol = withContext(Dispatchers.IO) {
+                UsuarioRepository.obtenerRolPorId(user.id)
+            }.trim().lowercase()
+
+            println("USER ID: ${user.id}")
+            println("ROL REAL: $rol")
+
+            configurarMenuPorRol(navigationView.menu, rol)
+            configurarBottomMenuPorRol(bottomNav, rol)
+        }
+
+        //  Abrir menú lateral
         btnMenu.setOnClickListener {
             drawer.open()
         }
 
-        // 🔹 Fragment inicial
+        //  Fragment inicial
         cambiarFragment(HomeFragment())
 
-        // 🔹 Bottom Navigation
+        //  Configurar rol
+        //configurarMenuPorRol(navigationView.menu)
+
+        //  Bottom Navigation
         bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
 
@@ -77,6 +108,46 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.contenedor, fragment)
             .commit()
     }
+
+    // configurar menu por rol
+    private fun configurarMenuPorRol(menu: Menu, rol: String) {
+
+        println("ROL OBTENIDO: $rol")
+
+        when (rol.trim().lowercase()) {
+
+            "admin" -> {
+                menu.findItem(R.id.nav_admin).isVisible = true
+                menu.findItem(R.id.nav_perfil).isVisible = true
+            }
+
+            "vendedor" -> {
+                menu.findItem(R.id.nav_admin).isVisible = false
+                menu.findItem(R.id.nav_perfil).isVisible = true
+            }
+
+            else -> {
+                menu.findItem(R.id.nav_admin).isVisible = false
+                menu.findItem(R.id.nav_perfil).isVisible = true
+            }
+        }
+    }
+
+    private fun configurarBottomMenuPorRol(bottomNav: BottomNavigationView, rol: String) {
+
+        when (rol.trim().lowercase()) {
+
+            "admin" -> {
+                bottomNav.menu.findItem(R.id.nav_admin).isVisible = true
+            }
+
+            else -> {
+                bottomNav.menu.findItem(R.id.nav_admin).isVisible = false
+            }
+        }
+    }
+
+
 
     //  FUNCIÓN cerrar sesion
     private fun cerrarSesion() {

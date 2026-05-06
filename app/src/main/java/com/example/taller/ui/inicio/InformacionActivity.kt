@@ -16,7 +16,7 @@ class InformacionActivity : AppCompatActivity() {
         setContentView(R.layout.activity_informacion)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, RegistroActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }, 3000)
     }

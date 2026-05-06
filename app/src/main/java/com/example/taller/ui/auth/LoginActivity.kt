@@ -23,6 +23,7 @@ import androidx.biometric.BiometricManager
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
 import com.example.taller.data.CredencialesManager
+import com.example.taller.data.UsuarioRepository
 import io.github.jan.supabase.auth.auth
 
 class LoginActivity : AppCompatActivity() {
@@ -58,6 +59,10 @@ class LoginActivity : AppCompatActivity() {
         btn_google = findViewById(R.id.btn_google)
         tvHuella = findViewById(R.id.in_huella)
 
+
+        tvtxt_registro.setOnClickListener {
+            startActivity(Intent(this, RegistroActivity::class.java))
+        }
 
         configurarVisibilidadHuella()
         tvHuella.setOnClickListener {
@@ -128,6 +133,21 @@ class LoginActivity : AppCompatActivity() {
                 SupabaseClient.client.auth.signInWith(IDToken) {
                     idToken = credential.idToken
                     provider = Google
+                }
+
+                val user = SupabaseClient.client.auth.currentUserOrNull()
+                if (user != null ) {
+                    val existe = UsuarioRepository.existeUsuario(user.id)
+                    if (!existe){
+                        val nombreCompleto = user.userMetadata
+                            ?.get("full_name")?.toString()
+                            ?.replace(oldValue = "\"", newValue = "")?: " "
+                        val partes = nombreCompleto.split( " ")
+                        val nombres = partes.firstOrNull()?:" "
+                        val apellidos = partes.drop(n = 1 ).joinToString( " " )
+                        val correoGogle = user.email?:""
+                        UsuarioRepository.insertarUsuario(user.id,nombres,apellidos,correoGogle)
+                    }
                 }
 
                 irAPantallaPrincipal()
